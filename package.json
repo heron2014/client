@@ -4,10 +4,11 @@
   "description": "Client (React and Redux)",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "npm run lint && mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test": "npm run lint && istanbul cover _mocha -- --compilers js:babel-register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
     "build": "webpack --progress --colors --watch",
-    "lint": "node_modules/eslint/bin/eslint.js 'src/**/*.@(js|jsx)' 'test/**/*.@(js|jsx)'"
+    "lint": "node_modules/eslint/bin/eslint.js 'src/**/*.@(js|jsx)' 'test/**/*.@(js|jsx)'",
+    "coverage": "istanbul cover _mocha -- --ui bdd -R spec -t 5000 --compilers js:babel-register --require ./test/test_helper.js $(find test -name '*_test.js')"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,13 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test",
+      "pre-commit": "npm run test"
     }
   },
   "homepage": "https://github.com/brainsandbrawns/client#readme",
   "devDependencies": {
     "babel-core": "^6.14.0",
+    "babel-istanbul": "^0.11.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
@@ -33,6 +35,7 @@
     "chai-jquery": "^2.0.0",
     "eslint-plugin-react": "^6.3.0",
     "ghooks": "^1.3.2",
+    "istanbul": "^1.0.0-alpha.2",
     "jquery": "^3.1.0",
     "jsdom": "^9.5.0",
     "mocha": "^3.0.2",

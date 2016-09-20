@@ -17,6 +17,10 @@
       "experimentalObjectRestSpread": true
     }
   },
+  "globals": {
+    "describe": ["error", "never"],
+    "it": ["error", "never"]
+  },
   "rules": {
     "no-console": ["warn", {allow: ["warn","error"]}],
     "no-extra-semi": "error",
