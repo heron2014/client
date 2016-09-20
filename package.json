@@ -1,0 +1,52 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "Client (React and Redux)",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "npm run lint && mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack --progress --colors --watch",
+    "lint": "node_modules/eslint/bin/eslint.js 'src/**/*.@(js|jsx)' 'test/**/*.@(js|jsx)'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brainsandbrawns/client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brainsandbrawns/client/issues"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test",
+    }
+  },
+  "homepage": "https://github.com/brainsandbrawns/client#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "chai-jquery": "^2.0.0",
+    "eslint-plugin-react": "^6.3.0",
+    "ghooks": "^1.3.2",
+    "jquery": "^3.1.0",
+    "jsdom": "^9.5.0",
+    "mocha": "^3.0.2",
+    "react-addons-test-utils": "^15.3.2",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "^6.13.0",
+    "eslint": "^3.5.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0"
+  }
+}

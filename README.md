@@ -1,2 +1,1 @@
-# client
-Client (React and Redux)
+# client (React and Redux)
