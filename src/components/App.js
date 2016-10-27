@@ -1,9 +1,23 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
+import Header from './Header';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div><p className="page-title">Page title</p></div>
-    );
-  }
+const propTypes = {
+  children: PropTypes.node
+};
+
+export default function App(props) {
+  return (
+    <div>
+      <Header />
+      <div className="row">
+        <div className="column small-centered medium-6 large-4">
+          { props.children }
+        </div>
+      </div>
+    </div>
+  );
 }
+
+App.propTypes = propTypes;
+
+export { App };
