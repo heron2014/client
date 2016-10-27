@@ -1,0 +1,5 @@
+node_modules/
+# Webpack bundle
+public/bundle.js
+coverage/
+config/

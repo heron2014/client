@@ -1,0 +1,6 @@
+instrumentation:
+  root: src
+  excludes: ['*_test.js*']
+  extensions:
+    - .js
+    - .jsx
