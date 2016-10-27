@@ -15,7 +15,8 @@ require('style!css!sass!applicationStyles');
 const store = createStore(
   combineReducers(reducers),
   compose(
-    applyMiddleware()
+    applyMiddleware(),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
 
