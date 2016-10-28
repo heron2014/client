@@ -3,4 +3,3 @@ instrumentation:
   excludes: ['*_test.js*']
   extensions:
     - .js
-    - .jsx

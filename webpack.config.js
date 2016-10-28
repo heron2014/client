@@ -48,7 +48,7 @@ module.exports = {
     ],
     alias: {
       app: 'src',
-      applicationStyles: 'src/styles/src.scss',
+      applicationStyles: 'src/styles/src.scss'
     },
     extensions: ['', '.js', '.jsx']
   },

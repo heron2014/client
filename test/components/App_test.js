@@ -6,7 +6,7 @@ import { renderIntoDocument } from 'react-addons-test-utils';
 describe('App', () => {
 
   it('renders', () => {
-    let component = renderIntoDocument(<App/>);
+    let component = renderIntoDocument(<div><App /></div>);
     expect(component).toExist();
   });
 });
