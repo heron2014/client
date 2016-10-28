@@ -19,5 +19,3 @@ export default function App(props) {
 }
 
 App.propTypes = propTypes;
-
-export { App };
