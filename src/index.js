@@ -7,6 +7,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './components/App';
 import Home from './components/Home';
 import Vendors from './components/Vendors';
+import Admin from './components/Admin';
 import * as reducers from './redux';
 
 // load foundation
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route path="vendors" component={Vendors} />
         <IndexRoute component={Home} />
     </Route>
+      <Route path="/admin" component={Admin}></Route>
     </Router>
   </Provider>
   , document.querySelector('.container'));
