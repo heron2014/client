@@ -8,7 +8,7 @@ import App from './components/App';
 import Home from './components/Home';
 import Vendors from './components/Vendors';
 import Admin from './components/Admin';
-import Signin from './components/auth/SignIn';
+import Login from './containers/Login';
 import * as reducers from './redux';
 
 // load foundation
@@ -30,7 +30,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="vendors" component={Vendors}>
-          <Route path="signin" component={Signin} />
+          <Route path="login" component={Login} />
         </Route>
         <IndexRoute component={Home} />
     </Route>
