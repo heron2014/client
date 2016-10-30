@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-const SIGNIN_URL = 'https://ff-app.herokuapp.com/signin';
+const SIGNIN_URL = process.env.SIGNIN_URL;
 const EMAIL_CHANGED = 'EMAIL_CHANGED';
 const PASSWORD_CHANGED = 'PASSWORD_CHANGED';
 const LOGIN_USER_START = 'LOGIN_USER_START';
