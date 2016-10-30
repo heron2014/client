@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default function Vendors() {
+const propTypes = {
+  children: PropTypes.node
+};
+
+export default function Vendors(props) {
   return (
-    <div>Vendors</div>
+    <div>{props.children}</div>
   );
 }
+
+Vendors.propTypes = propTypes;

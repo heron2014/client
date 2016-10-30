@@ -31,7 +31,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        SIGNIN_URL: JSON.stringify(process.env.SIGNIN_URL)
       }
     })
   ],
@@ -66,5 +67,5 @@ module.exports = {
       path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
-  devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map'
+  devtool: process.env.NODE_ENV === 'production' ? undefined : 'inline-source-map'
 };
