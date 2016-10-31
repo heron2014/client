@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import HeaderVendors from './HeaderVendors';
 
 const propTypes = {
   children: PropTypes.node
@@ -6,7 +7,14 @@ const propTypes = {
 
 export default function Vendors(props) {
   return (
-    <div>{props.children}</div>
+    <div>
+      <HeaderVendors />
+      <div className="row">
+        <div className="column small-centered medium-6 large-4">
+          { props.children }
+        </div>
+      </div>
+    </div>
   );
 }
 
