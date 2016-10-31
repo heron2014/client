@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { emailChanged, passwordChanged, signinUser } from '../redux/modules/auth';
+import { emailChanged, passwordChanged, signinUser, signupUser } from '../redux/modules/auth';
 import Login from '../components/Login';
 
 function mapStateToProps({ auth }) {
@@ -22,6 +22,9 @@ function mapDispatchToProps(dispatch) {
     },
     handleLoginUser: (email, password, is_vendor) => {
       dispatch(signinUser(email, password, is_vendor));
+    },
+    handleSignupUser: (email, password, is_vendor) => {
+      dispatch(signupUser(email, password, is_vendor));
     }
   };
 }

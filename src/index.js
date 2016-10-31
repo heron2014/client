@@ -9,7 +9,8 @@ import App from './components/App';
 import Home from './components/Home';
 import Vendors from './components/Vendors';
 import Admin from './components/Admin';
-import Login from './containers/Login';
+import LoginContainer from './containers/LoginContainer';
+import SignoutContainer from './containers/SignoutContainer';
 import Dashboard from './components/Dashboard';
 import * as reducers from './redux';
 
@@ -34,8 +35,9 @@ ReactDOM.render(
         <IndexRoute component={Home} />
     </Route>
     <Route path="/vendors" component={Vendors}>
-      <Route path="login" component={Login} />
+      <Route path="login" component={LoginContainer} />
       <Route path="dashboard" component={Dashboard} />
+      <Route path="signout" component={SignoutContainer} />
     </Route>
       <Route path="/admin" component={Admin}></Route>
     </Router>

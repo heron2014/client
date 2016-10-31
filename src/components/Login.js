@@ -10,6 +10,12 @@ const propTypes = {
 
 export default function Login(props) {
 
+  function onSignupHandler() {
+    const { email, password } = props;
+    const is_vendor = true;
+    props.handleSignupUser({ email, password, is_vendor });
+  }
+
   function onLoginHandler() {
     const { email, password } = props;
     const is_vendor = true;
@@ -27,6 +33,7 @@ export default function Login(props) {
           <button
             type="button"
             className="secondary expanded hollow button"
+            onClick={() => { onSignupHandler(); }}
             >Sign up</button>
         </div>
         <div className="small-5 columns login-btns">
@@ -71,7 +78,7 @@ export default function Login(props) {
           </div>
         </div>
       </div>
-      <span>{props.error}</span>
+      <span className="error-msg">{props.error}</span>
       {renderButtons()}
   </div>
   );
