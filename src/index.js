@@ -12,7 +12,9 @@ import Admin from './components/Admin';
 import LoginContainer from './containers/LoginContainer';
 import SignoutContainer from './containers/SignoutContainer';
 import Dashboard from './components/Dashboard';
+import RequireAuth from  './containers/RequireAuth';
 import * as reducers from './redux';
+import { AUTH_USER } from './redux/modules/auth';
 
 // load foundation
 $(document).foundation(); //eslint-disable-line no-undef
@@ -28,6 +30,11 @@ const store = createStore(
   )
 );
 
+const token = localStorage.getItem('token_vendor');
+if (token) {
+  store.dispatch({ type: AUTH_USER });
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
@@ -36,7 +43,7 @@ ReactDOM.render(
     </Route>
     <Route path="/vendors" component={Vendors}>
       <Route path="login" component={LoginContainer} />
-      <Route path="dashboard" component={Dashboard} />
+      <Route path="dashboard" component={RequireAuth(Dashboard)} />
       <Route path="signout" component={SignoutContainer} />
     </Route>
       <Route path="/admin" component={Admin}></Route>
