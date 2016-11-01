@@ -32,7 +32,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        SIGNIN_URL: JSON.stringify(process.env.SIGNIN_URL)
+        SIGNIN_URL: JSON.stringify(process.env.SIGNIN_URL),
+        SIGNUP_URL: JSON.stringify(process.env.SIGNUP_URL)
       }
     })
   ],
