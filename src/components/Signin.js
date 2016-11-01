@@ -31,8 +31,8 @@ let Signin = (props) => {
 
   return (
     <form onSubmit={handleSubmit(handleSignin)}>
-      <Field component={renderField} type="text" name="email" placeholder="example@gmai.com"/>
-      <Field component={renderField} type="password" name="password" placeholder="password"/>
+      <Field component={renderField} type="text" name="email" placeholder="example@gmai.com" label="Email" />
+      <Field component={renderField} type="password" name="password" placeholder="password" label="Password" />
       {renderButton()}
       <Link to="/vendors/signup">Sign up here</Link>
     </form>
