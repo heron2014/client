@@ -3,28 +3,12 @@ import { browserHistory } from 'react-router';
 
 const SIGNIN_URL = process.env.SIGNIN_URL;
 const SIGNUP_URL = process.env.SIGNUP_URL;
-const EMAIL_CHANGED = 'EMAIL_CHANGED';
-const PASSWORD_CHANGED = 'PASSWORD_CHANGED';
 const LOGIN_USER_START = 'LOGIN_USER_START';
 const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 const LOGIN_USER_FAIL = 'LOGIN_USER_FAIL';
 const UNAUTH_USER = 'UNAUTH_USER';
 export const AUTH_USER = 'AUTH_USER';
 const SIGNUP_ERROR = 'SIGNUP_ERROR';
-
-export function emailChanged(text) {
-  return {
-    type: EMAIL_CHANGED,
-    payload: text
-  };
-}
-
-export function passwordChanged(text) {
-  return {
-    type: PASSWORD_CHANGED,
-    payload: text
-  };
-}
 
 export function signinUser({ email, password, is_vendor }) {
   return function(dispatch) {
@@ -90,10 +74,6 @@ const INITIAL_STATE = {
 
 export default function auth(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case EMAIL_CHANGED:
-    return { ...state, email: action.payload };
-  case PASSWORD_CHANGED:
-    return { ...state, password: action.payload };
   case LOGIN_USER_START:
     return { ...state, loading: true, error: '' };
   case LOGIN_USER_SUCCESS:
