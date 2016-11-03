@@ -10,23 +10,24 @@ export default function HeaderVendor(props) {
   function renderLinks() {
     if (props.authenticated) {
       return (
-        <ul className="menu">
-          <li>
-            <Link to="/vendors/signout" activeClassName="active-link">Sign out</Link>
-          </li>
-        </ul>
+        <li>
+          <Link to="/vendors/signout" activeClassName="active-link">Sign out</Link>
+        </li>
       );
     } else {
       return (
-        <ul className="menu">
-          <li>
-            <Link to="/vendors/login" activeClassName="active-link">Sign up/Login</Link>
+        [
+          <li key={1}>
+            <Link activeClassName="active-link" to="/vendors/login">Log In</Link>
+          </li>,
+          <li key={2}>
+            <Link activeClassName="active-link" to="/vendors/signup">Sign Up</Link>
           </li>
-        </ul>
+        ]
       );
     }
   }
-  
+
   return (
     <div className="top-bar">
       <div className="top-bar-left">
@@ -37,7 +38,9 @@ export default function HeaderVendor(props) {
         </ul>
       </div>
       <div className="top-bar-right">
-        {renderLinks()}
+        <ul className="menu">
+          {renderLinks()}
+        </ul>
       </div>
     </div>
   );
